@@ -80,8 +80,11 @@ socket.on("buy_signal", async (signal) => {
         } else if (signal.pair.endsWith("USDT")) {
             alt = signal.pair.replace("USDT", "")
             baseCoin = "USDT"
+        } else if (signal.pair.endsWith("BNB")) {
+            alt = signal.pair.replace("BNB", "")
+            baseCoin = "BNB"
         }
-        const coinPair = alt + baseCoin;
+        const coinPair = alt + baseCoin
 
         if (!tradingData.trading_pairs[signal.pair + signal.stratid] && signal.new) {
             console.log(
@@ -362,8 +365,11 @@ socket.on("sell_signal", async (signal) => {
         } else if (signal.pair.endsWith("USDT")) {
             alt = signal.pair.replace("USDT", "")
             baseCoin = "USDT"
+        } else if (signal.pair.endsWith("BNB")) {
+            alt = signal.pair.replace("BNB", "")
+            baseCoin = "BNB"
         }
-        const coinPair = alt + baseCoin;
+        const coinPair = alt + baseCoin
 
         if (tradeShortEnabled && !tradingData.trading_pairs[signal.pair + signal.stratid] && signal.new) {
             console.log(
@@ -680,8 +686,11 @@ socket.on("close_traded_signal", async (signal) => {
         } else if (signal.pair.endsWith("USDT")) {
             alt = signal.pair.replace("USDT", "")
             baseCoin = "USDT"
+        } else if (signal.pair.endsWith("BNB")) {
+            alt = signal.pair.replace("BNB", "")
+            baseCoin = "BNB"
         }
-        const coinPair = alt + baseCoin;
+        const coinPair = alt + baseCoin
 
         if (tradingData.trading_types[signal.pair + signal.stratid] === "LONG") {
             console.log(
